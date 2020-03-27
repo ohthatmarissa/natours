@@ -5,19 +5,27 @@ Medium green: #55c57a
 Dark green: #28b485
 */
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  /* this resets the root property for font size from 16px to 10px so the rem calculations are easier going forward */
+  font-size: 62.5%; /* of 16px = 10px We do it this way so that people that need to change the font size in the dom for eyesight, still can*/
 }
 
 body {
   font-family: Lato;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
 .header {
@@ -31,12 +39,12 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem;
   text-transform: uppercase;
 }
 
@@ -50,23 +58,23 @@ body {
 
 .heading-primary {
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
   animation-name: moveInLeft;
   animation-duration: 3s;
 }
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 19.5px;
+  letter-spacing: 1.95rem;
   animation-name: moveInRight;
   animation-duration: 3s;
 }
@@ -74,7 +82,7 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-200px);
+    transform: translateX(-20rem);
   }
   100% {
     opacity: 1;
@@ -85,7 +93,7 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(200px);
+    transform: translateX(20rem);
   }
   100% {
     opacity: 1;
@@ -97,21 +105,21 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: relative;
   /* transition: all 0.2s; This doesn't seem to do anything */
 }
 /*this make the button move a bit up and down when hovered and clicked*/
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
@@ -125,7 +133,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
