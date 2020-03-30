@@ -4,55 +4,69 @@ Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
 */
+
+$color-primary: #55c57a;
+$color-primary-light: #7ed56fcc;
+$color-primary-dark: #28b485cc;
+$color-grey-dark: #777;
+$color-white: #fff;
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 html {
   /* this resets the root property for font size from 16px to 10px so the rem calculations are easier going forward */
-  font-size: 62.5%;
-  /* of 16px = 10px We do it this way so that people that need to change the font size in the dom for eyesight, still can*/ }
+  font-size: 62.5%; /* of 16px = 10px We do it this way so that people that need to change the font size in the dom for eyesight, still can*/
+}
 
 body {
   font-family: Lato;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #55c57a;
+  color: $color-primary;
   padding: 3rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, #7ed56fcc, #28b485cc), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; }
+  position: relative;
+}
 
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem; }
+  left: 4rem;
+}
 
 .header__logo {
   height: 3.5rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 .header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center; }
+  text-align: center;
+}
 
 .heading-primary {
-  color: #fff;
-  margin-bottom: 3rem; }
+  color: $color-white;
+  margin-bottom: 3rem;
+}
 
 .heading-primary--main {
   display: block;
@@ -60,7 +74,8 @@ body {
   font-weight: 400;
   letter-spacing: 3.5rem;
   animation-name: moveInLeft;
-  animation-duration: 3s; }
+  animation-duration: 3s;
+}
 
 .heading-primary--sub {
   display: block;
@@ -68,24 +83,30 @@ body {
   font-weight: 700;
   letter-spacing: 1.95rem;
   animation-name: moveInRight;
-  animation-duration: 3s; }
-
+  animation-duration: 3s;
+}
 /*animations for moving the titles in from either side*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-20rem); }
+    transform: translateX(-20rem);
+  }
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(20rem); }
+    transform: translateX(20rem);
+  }
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 .btn:link,
 .btn:visited {
@@ -95,20 +116,23 @@ body {
   display: inline-block;
   border-radius: 10rem;
   position: relative;
-  /* transition: all 0.2s; This doesn't seem to do anything */ }
-
+  /* transition: all 0.2s; This doesn't seem to do anything */
+}
 /*this make the button move a bit up and down when hovered and clicked*/
 .btn:hover {
   transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
 
 .btn--white {
-  color: #777;
-  background-color: #fff; }
+  color: $color-grey-dark;
+  background-color: $color-white;
+}
 
 /*makes the button have white shoot out of the sides with pseudo elemnts*/
 .btn::after {
@@ -121,11 +145,14 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4s; }
+  transition: all 0.4s;
+}
 
 .btn--white::after {
-  background-color: #fff; }
+  background-color: $color-white;
+}
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
+  opacity: 0;
+}
