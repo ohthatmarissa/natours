@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  text-decoration: none;
+}
+
+html {
+  /* this resets the root property for font size from 16px to 10px so the rem calculations are easier going forward */
+  font-size: 62.5%; /* of 16px = 10px We do it this way so that people that need to change the font size in the dom for eyesight, still can*/
+}
+
+body {
+  box-sizing: border-box;
+}
