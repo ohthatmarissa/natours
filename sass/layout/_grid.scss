@@ -23,6 +23,10 @@
   }
 
   .col-1-of-3 {
-    width: calc((80% -5rem) / 3);
+    width: calc((100% - 2 * 5rem) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 5rem) / 3) + 5rem);
   }
 }
