@@ -29,6 +29,15 @@
     }
   }
 
+  &--green {
+    color: $color-white;
+    background-color: $color-primary;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
   /*makes the button have white shoot out of the sides with pseudo elemnts*/
   &::after {
     content: "";

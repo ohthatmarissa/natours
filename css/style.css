@@ -89,6 +89,9 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
+.u-margin-top-big {
+  margin-top: 8rem; }
+
 .btn {
   /*this make the button move a bit up and down when hovered and clicked*/
   /*makes the button have white shoot out of the sides with pseudo elemnts*/ }
@@ -110,6 +113,11 @@ body {
     color: #777;
     background-color: #fff; }
     .btn--white::after {
+      background-color: #fff; }
+  .btn--green {
+    color: #fff;
+    background-color: #55c57a; }
+    .btn--green::after {
       background-color: #fff; }
   .btn::after {
     content: "";
@@ -337,5 +345,5 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 20rem 10rem;
+  padding: 20rem 10rem 15rem 10rem;
   margin-top: -7rem; }
