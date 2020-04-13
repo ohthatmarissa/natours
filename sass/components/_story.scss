@@ -1,0 +1,31 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 3rem rgba($color-black, 0.1);
+  background-color: $color-white;
+  border-radius: 0.3rem;
+  padding: 6rem;
+  padding-left: 9rem;
+  transform: skewX(-12deg); //makes the section diagonal
+
+  & > * {
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(50% at 50% 50%); //makes the image a circle
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg); //makes the img straight after skew transform
+  }
+
+  &__img {
+    width: 100%; //makes the image fit in the circle
+    height: 100%;
+  }
+
+  &__text {
+    transform: skewX(12deg); //makes the text straight after skew transform
+  }
+}
