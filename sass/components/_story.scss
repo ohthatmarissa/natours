@@ -18,14 +18,42 @@
     shape-outside: circle(50% at 50% 50%); //makes the image a circle
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg); //makes the img straight after skew transform
+    position: relative;
   }
 
   &__img {
     width: 100%; //makes the image fit in the circle
     height: 100%;
+    transform: scale(1.4);
+    transition: all 0.5s; //animates the img getting small on hover
   }
 
   &__text {
     transform: skewX(12deg); //makes the text straight after skew transform
+  }
+
+  &__caption {
+    //persons name in the circle img
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0); //sets the name lower on the img
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0; //makes invisible
+    transition: all 0.5s; //animates the name rising on hover
+  }
+
+  &:hover &__caption {
+    //on hover the peresons name appears in the cirlce img
+    opacity: 1; //makes visible
+    transform: translate(-50%, -50%); //raises the name to middle of img
+  }
+
+  &:hover &__img {
+    transform: scale(1);
+    filter: blur(0.3rem) brightness(80%);
   }
 }
