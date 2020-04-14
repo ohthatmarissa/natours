@@ -19,7 +19,7 @@
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg); //makes the img straight after skew transform
     position: relative;
-    overflow: hidden;
+    overflow: hidden; //get rid of wierd lines next to the img
   }
 
   &__img {
@@ -54,6 +54,7 @@
   }
 
   &:hover &__img {
+    //on hover the image blurs and gets smaller
     transform: scale(1);
     filter: blur(0.3rem) brightness(80%);
   }
