@@ -14,6 +14,7 @@
         border-bottom: 0.3rem solid transparent;
         width: 90%;
         display: block;
+        transition: all 0.3s; //eases in the color change of the input box line
 
         &:focus {
             outline: none;
@@ -39,12 +40,57 @@
         margin-left: 2rem;
         margin-top: 0.7rem;
         display: block;
-        transition: all 0.3s;
+        transition: all 0.3s; //eases the placeholder moving unter the input box
     }
 
     &__input:placeholder-shown + &__label {
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4rem);
+    }
+
+    &__radio-group {
+        //this sets the buttons on the same line w/o using floats
+        width: 49%;
+        display: inline-block;
+    }
+
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 4rem;
+    }
+
+    &__radio-button {
+        height: 3rem;
+        width: 3rem;
+        border: 0.5rem solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -0.4rem;
+
+        &::after {
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            background-color: $color-primary;
+            position: absolute;
+            top: 18%;
+            left: 17%;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
     }
 }
