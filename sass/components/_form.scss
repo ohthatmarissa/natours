@@ -8,19 +8,43 @@
         font-family: inherit;
         padding: 1.5rem 2rem;
         border-radius: 0.2rem;
+        color: inherit;
         background-color: rgba($color-white, 0.5);
         border: none;
         border-bottom: 0.3rem solid transparent;
         width: 90%;
         display: block;
-    }
 
-    &__input:focus {
-        outline: none;
-        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
-        border-bottom: 0.3rem solid $color-primary;
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+            border-bottom: 0.3rem solid $color-primary;
+        }
+
+        &:focus:invalid {
+            //makes it so the input field is invalid until the proper info is entered
+            border-bottom: 0.3rem solid $color-orange-dark;
+        }
+
+        &::-webkit-input-placeholder {
+            //this makes the placeholder lighter grey until typed and then darker
+            color: $color-grey-dark-2;
+        }
     }
 
     &__label {
+        color: $color-grey-dark-2;
+        //font-size: 1.2rem;
+        //font-weight: 700;
+        margin-left: 2rem;
+        margin-top: 0.7rem;
+        display: block;
+        transition: all 0.3s;
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
     }
 }

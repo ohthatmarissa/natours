@@ -307,16 +307,32 @@ body {
   font-family: inherit;
   padding: 1.5rem 2rem;
   border-radius: 0.2rem;
+  color: inherit;
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-bottom: 0.3rem solid transparent;
   width: 90%;
   display: block; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    border-bottom: 0.3rem solid #55c57a; }
+  .form__input:focus:invalid {
+    border-bottom: 0.3rem solid #ff7730; }
+  .form__input::-webkit-input-placeholder {
+    color: #999; }
 
-.form__input:focus {
-  outline: none;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  border-bottom: 0.3rem solid #55c57a; }
+.form__label {
+  color: #999;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
 
 .story {
   width: 75%;
@@ -431,7 +447,7 @@ body {
   padding: 15rem 0; }
 
 .section-book {
-  padding: 15rem 0;
+  padding: 15rem 2rem;
   background-image: linear-gradient(to right bottom, #7ed56fcc, #28b485cc); }
 
 .book {
