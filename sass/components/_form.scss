@@ -11,7 +11,7 @@
         color: inherit;
         background-color: rgba($color-white, 0.5);
         border: none;
-        border-bottom: 0.3rem solid transparent;
+        border-bottom: 0.3rem solid transparent; //this makes it so the input boxes don't jump around when clicked with the colored bottom lines
         width: 90%;
         display: block;
         transition: all 0.3s; //eases in the color change of the input box line
@@ -44,6 +44,7 @@
     }
 
     &__input:placeholder-shown + &__label {
+        //hides the bottom placeholder
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4rem);
@@ -56,6 +57,7 @@
     }
 
     &__radio-input {
+        //hides the regular radio button
         display: none;
     }
 
@@ -66,6 +68,7 @@
     }
 
     &__radio-button {
+        //outside ring of the custom radio button
         height: 3rem;
         width: 3rem;
         border: 0.5rem solid $color-primary;
@@ -76,6 +79,7 @@
         top: -0.4rem;
 
         &::after {
+            //this is the little dot inside of the custome radio button
             content: "";
             display: block;
             height: 1.3rem;
@@ -83,14 +87,15 @@
             border-radius: 50%;
             background-color: $color-primary;
             position: absolute;
-            top: 18%;
-            left: 17%;
-            opacity: 0;
+            top: 50%; //positions the dot
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0; //hides the dot
             transition: opacity 0.2s;
         }
     }
 
     &__radio-input:checked ~ &__radio-label &__radio-button::after {
-        opacity: 1;
+        opacity: 1; //shows the dot when clicked
     }
 }

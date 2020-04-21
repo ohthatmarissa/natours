@@ -365,8 +365,9 @@ body {
     border-radius: 50%;
     background-color: #55c57a;
     position: absolute;
-    top: 18%;
-    left: 17%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.2s; }
 
