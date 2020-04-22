@@ -27,7 +27,7 @@
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 100;
-        transition: transform 0.8s;
+        transition: transform 0.8s; //ease of background
 
         //transform: scale(90);
     }
@@ -42,7 +42,7 @@
         opacity: 0; //this hides the nav menu
         width: 0;
         visibility: hidden;
-        transition: all 0.8s;
+        transition: all 0.8s; //ease of nav list
     }
 
     &__list {
@@ -71,7 +71,7 @@
             //below sets the sliding white on hover of list link
             background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
             background-size: 250%;
-            transition: all 0.5s;
+            transition: all 0.5s; //ease of white highlight on link list item
         }
 
         &:hover,
@@ -84,6 +84,7 @@
     }
 
     &__checkbox:checked ~ &__background {
+        //when nav button is clicked the nav menu expands
         transform: scale(80);
     }
 
