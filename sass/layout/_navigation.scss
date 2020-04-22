@@ -4,36 +4,45 @@
     }
 
     &__button {
+        //this is the white menu button on top of the background
         background-color: $color-white;
         height: 7rem;
         width: 7rem;
-        position: fixed;
+        position: fixed; //this makes it stay in place as the screen is scrolled
         top: 6rem;
         right: 6rem;
         border-radius: 50%;
-        z-index: 200;
+        box-shadow: 0 1rem 3rem rgba($color-black, 0.2);
+        cursor: pointer;
+        z-index: 200; //this makes it the highest index on the screen
     }
 
     &__background {
+        //this is the gradient green part of the navigation menu
         height: 6rem;
         width: 6rem;
         border-radius: 50%;
-        position: fixed;
+        position: fixed; //stays in place when the screen is scrolled
         top: 6.5rem;
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 100;
+        transition: transform 0.8s;
 
-        transform: scale(90);
+        //transform: scale(90);
     }
 
     &__nav {
-        height: 100vh;
-        width: 100%;
+        height: 100vh; //nav fills the whole screen
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         z-index: 150;
+
+        opacity: 0; //this hides the nav menu
+        width: 0;
+        visibility: hidden;
+        transition: all 0.8s;
     }
 
     &__list {
@@ -43,6 +52,7 @@
         transform: translate(-50%, -50%);
         list-style-type: none;
         text-align: center;
+        width: 100%;
     }
 
     &__item {
@@ -58,9 +68,10 @@
             color: $color-white;
             padding: 1rem 2rem;
             text-transform: uppercase;
+            //below sets the sliding white on hover of list link
             background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
             background-size: 250%;
-            transition: all.4s;
+            transition: all 0.5s;
         }
 
         &:hover,
@@ -68,6 +79,17 @@
             background-position: 100%;
             color: $color-primary;
             transform: translateX(1rem);
+            cursor: pointer;
         }
+    }
+
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        visibility: visible;
+        opacity: 1;
+        width: 100%;
     }
 }
