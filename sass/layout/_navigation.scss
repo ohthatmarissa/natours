@@ -15,6 +15,7 @@
         box-shadow: 0 1rem 3rem rgba($color-black, 0.2);
         cursor: pointer;
         z-index: 200; //this makes it the highest index on the screen
+        text-align: center; //makes the little bars centered
     }
 
     &__background {
@@ -41,7 +42,7 @@
 
         opacity: 0; //this hides the nav menu
         width: 0;
-        visibility: hidden;
+        visibility: hidden; //hides it on load
         transition: all 0.8s; //ease of nav list
     }
 
@@ -92,5 +93,64 @@
         visibility: visible;
         opacity: 1;
         width: 100%;
+    }
+
+    //ICON
+    &__icon {
+        position: relative;
+        margin-top: 3.5rem;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark-3;
+            display: inline-block;
+        }
+
+        //this is the 3 bars for nav menu
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all 0.2s; //this controls the bars movement on hover
+        }
+
+        //this is the top bar
+        &::before {
+            top: -0.8rem;
+        }
+
+        //this is the bottom bar
+        &::after {
+            top: 0.8rem;
+        }
+    }
+
+    //this makes the top and bottom bars move when hovered
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+
+    &__button:hover &__icon::after {
+        top: 1rem;
+    }
+
+    //checkbox hack
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent; //this makes the middle bar disappear
+    }
+
+    //this makes the top and bottom bars move to the middle and cross
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
     }
 }
