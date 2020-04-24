@@ -125,12 +125,9 @@
   }
 
   &__cta {
-    position: absolute;
+    @include centered;
     text-align: center;
-    top: 50%;
-    left: 50%;
     width: 90%;
-    transform: translate(-50%, -50%);
   }
 
   &__price-box {
