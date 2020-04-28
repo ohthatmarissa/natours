@@ -381,16 +381,40 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 300; }
+  z-index: 300;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
   .popup__content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
+    width: 70%;
     background-color: pink;
-    color: green; }
+    border-radius: 3px;
+    overflow: hidden; }
+  .popup__left {
+    width: 33.333%;
+    float: left; }
+  .popup__right {
+    width: 66.6667%;
+    float: left;
+    padding: 3rem 4rem;
+    text-align: center; }
+  .popup__img {
+    display: block;
+    width: 100%; }
+  .popup__text {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid #eee;
+    hyphens: auto; }
 
 .story {
   width: 75%;
