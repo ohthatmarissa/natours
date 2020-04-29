@@ -1,3 +1,18 @@
+/*
+0-600:    phone
+600-900:  tab portrait
+900-1200: tab landscape
+[1200-1800]:  this is the size the code is originally written for
+1800+:    big desktop    
+
+Breakpoint argument choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+1em = 16px
+*/
 *,
 *::after,
 *::before {
@@ -10,6 +25,18 @@ html {
   /* this resets the root property for font size from 16px to 10px so the rem calculations are easier going forward */
   font-size: 62.5%;
   /* of 16px = 10px We do it this way so that people that need to change the font size in the dom for eyesight, still can*/ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 40%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 100%; } }
 
 body {
   box-sizing: border-box; }
