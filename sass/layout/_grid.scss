@@ -6,6 +6,10 @@
     margin-bottom: 5rem;
   }
 
+  @include respond(tab-port) {
+    max-width: 50rem;
+  }
+
   @include clearfix;
 
   [class^="col-"] {
@@ -13,6 +17,12 @@
 
     &:not(:last-child) {
       margin-right: 5rem;
+    }
+
+    //makes the columns vertical instead of horizontal
+    @include respond(tab-port) {
+      width: 100% !important;
+      margin-bottom: 5rem;
     }
   }
 

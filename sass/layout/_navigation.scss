@@ -16,6 +16,15 @@
         cursor: pointer;
         z-index: 200; //this makes it the highest index on the screen
         text-align: center; //makes the little bars centered
+
+        @include respond(tab-port) {
+            top: 4rem;
+            right: 4rem;
+        }
+        @include respond(phone) {
+            top: 3rem;
+            right: 3rem;
+        }
     }
 
     &__background {
@@ -30,7 +39,14 @@
         z-index: 100;
         transition: transform 0.8s; //ease of background
 
-        //transform: scale(90);
+        @include respond(tab-port) {
+            top: 4.5rem;
+            right: 4.5rem;
+        }
+        @include respond(phone) {
+            top: 3.5rem;
+            right: 3.5rem;
+        }
     }
 
     &__nav {
