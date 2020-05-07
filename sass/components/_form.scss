@@ -16,6 +16,10 @@
         display: block;
         transition: all 0.3s; //eases in the color change of the input box line
 
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
         &:focus {
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
@@ -54,6 +58,11 @@
         //this sets the buttons on the same line w/o using floats
         width: 49%;
         display: inline-block;
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
     }
 
     &__radio-input {
