@@ -504,14 +504,23 @@ body {
   .popup__left {
     width: 33.333%;
     float: left; }
+    @media (max-width: 37.5em) {
+      .popup__left {
+        display: none; } }
   .popup__right {
     width: 66.6667%;
     float: left;
     padding: 3rem 4rem;
     text-align: center; }
+    @media (max-width: 37.5em) {
+      .popup__right {
+        width: 100%; } }
   .popup__img {
     display: block;
     width: 100%; }
+    @media (max-width: 56.25em) {
+      .popup__img {
+        height: 22vh; } }
   .popup__text {
     margin-top: 2rem;
     margin-bottom: 2rem;
