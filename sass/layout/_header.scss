@@ -1,11 +1,18 @@
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.7), rgba($color-primary-dark, 0.7)),
-    url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba($color-orange-light, 0.7), rgba($color-orange-dark, 0.7)),
+    url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
+
+  //this is css responsive images with 1999-599px screens
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    /*this is css responsive images with screens over 2000px*/ (min-width: 125empx) {
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.7), rgba($color-primary-dark, 0.7)),
+      url(../img/hero.jpg);
+  }
 
   @include respond(phone) {
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
